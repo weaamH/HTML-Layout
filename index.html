@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+        }
+
+        .flexbox-2 {
+            display: flex;
+            width: 100%;
+        }
+
+        .flexbox-1-item-1 {
+            background-color: rgb(201, 206, 209);
+            flex-basis: 60px;
+        }
+
+        .flexbox-1-item-2 {
+            flex-basis: 100vh;
+            flex-grow: 1;
+        }
+
+        .flexbox-1-item-3 {
+            background-color: rgb(12, 12, 52);
+            color: white;
+            flex-basis: 62px;
+            flex-shrink: 0;
+            flex-grow: 0;
+        }
+
+        .left-section {
+            min-width: 200px;
+            flex-shrink: 0;
+            flex-grow: 0;
+            background-color: rgb(156, 200, 245);
+        }
+
+        .main-content {
+            flex-grow: 1;
+            flex-basis: 70vh;
+            font-size: 30px;
+            background-color: blanchedalmond
+        }
+
+        .flexbox-3 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .flexbox-4 {
+            display: flex;
+            align-items: center;
+            padding-left: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="flexbox-1-item-1">
+        <div>Header Section height is dynamic with minimum height 60px. depends on its content</div>
+        <button>Add Content</button>
+        <button>Remove Dynamic Content</button>
+        <div>Dynamic Content</div>
+    </header>
+    <div class="flexbox-1-item-2 flexbox-2">
+        <div class="left-section flexbox-3">Left Section</div>
+        <div class="main-content flexbox-3">Main Content</div>
+    </div>
+    <footer class="flexbox-1-item-3 flexbox-4">
+        Footer Section
+    </footer>
+</body>
+
+</html>
