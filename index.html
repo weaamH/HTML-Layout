@@ -60,15 +60,17 @@
             align-items: center;
             padding-left: 5px;
         }
+        .div-color{}
     </style>
+    
 </head>
 
 <body>
     <header class="flexbox-1-item-1">
         <div>Header Section height is dynamic with minimum height 60px. depends on its content</div>
-        <button>Add Content</button>
-        <button>Remove Dynamic Content</button>
-        <div>Dynamic Content</div>
+        <button class="addNewLine">Add Content</button>
+        <button class="removeLines">Remove Dynamic Content</button>
+        <div id="container">Dynamic Content<br></div>
     </header>
     <div class="flexbox-1-item-2 flexbox-2">
         <div class="left-section flexbox-3">Left Section</div>
@@ -77,6 +79,31 @@
     <footer class="flexbox-1-item-3 flexbox-4">
         Footer Section
     </footer>
+
+    <script>
+        var i = 1;
+        const addButton = document.querySelector(".addNewLine");
+        const divContainer = document.getElementById("container");
+
+        addButton.addEventListener("click", function addNewLine() {
+        const div = document.createElement("div");
+        div.classList.add("div-color");
+        div.innerHTML += "Line " + i;
+        divContainer.appendChild(div);
+        i++;
+        });  
+
+        const removeButton = document.querySelector(".removeLines");
+        removeButton.addEventListener("click", function removeLines(){
+            const lines = document.querySelectorAll('.div-color');
+            lines.forEach(line => {
+                line.remove();
+                i=1;
+            });
+        });
+
+        
+    </script>
 </body>
 
 </html>
